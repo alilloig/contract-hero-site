@@ -28,7 +28,7 @@ Trying to create a u64 longer than 64 bits
 
 
 <pre><code>#[error]
-<b>const</b> <a href="../mmr/mmr_bits.md#mmr_mmr_bits_Eu64Length">Eu64Length</a>: vector&lt;u8&gt; = b"Bit length must be less than or equal to 64";
+<b>const</b> <a href="#mmr_mmr_bits_Eu64Length">Eu64Length</a>: vector&lt;u8&gt; = b"Bit length must be less than or equal to 64";
 </code></pre>
 
 
@@ -46,7 +46,7 @@ For 0, it returns 0 as a special case since no bits are needed to represent zero
 This is useful in MMR operations to determine tree heights and positions.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr_bits.md#mmr_mmr_bits_get_length">get_length</a>(num: u64): u8
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_bits_get_length">get_length</a>(num: u64): u8
 </code></pre>
 
 
@@ -55,7 +55,7 @@ This is useful in MMR operations to determine tree heights and positions.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr_bits.md#mmr_mmr_bits_get_length">get_length</a>(num: u64): u8 {
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_bits_get_length">get_length</a>(num: u64): u8 {
     <b>if</b> (num == 0) {
         <b>return</b> 0
     };
@@ -86,7 +86,7 @@ For example, for 13 (1101 in binary), the function returns 3 as there are three 
 In MMR operations, this can be used to count the number of elements in certain paths or structures.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr_bits.md#mmr_mmr_bits_count_ones">count_ones</a>(num: u64): u64
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_bits_count_ones">count_ones</a>(num: u64): u64
 </code></pre>
 
 
@@ -95,7 +95,7 @@ In MMR operations, this can be used to count the number of elements in certain p
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr_bits.md#mmr_mmr_bits_count_ones">count_ones</a>(num: u64): u64 {
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_bits_count_ones">count_ones</a>(num: u64): u64 {
     <b>let</b> <b>mut</b> count: u64 = 0;
     <b>let</b> <b>mut</b> n = num;
     // Classic bit-counting algorithm: remove the lowest set bit in each iteration
@@ -127,7 +127,7 @@ performing (num & (num+1)) will always result in 0 because:
 - Their bitwise AND will therefore be 0.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr_bits.md#mmr_mmr_bits_are_all_ones">are_all_ones</a>(num: u64): bool
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_bits_are_all_ones">are_all_ones</a>(num: u64): bool
 </code></pre>
 
 
@@ -136,7 +136,7 @@ performing (num & (num+1)) will always result in 0 because:
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr_bits.md#mmr_mmr_bits_are_all_ones">are_all_ones</a>(num: u64): bool {
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_bits_are_all_ones">are_all_ones</a>(num: u64): bool {
     (num & (num + 1)) == 0
 }
 </code></pre>
@@ -158,7 +158,7 @@ These patterns are useful in MMR operations for creating masks or identifying pe
 The function checks that the requested bit length doesn't exceed 64 (the size of u64).
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr_bits.md#mmr_mmr_bits_create_all_ones">create_all_ones</a>(bitsLength: u8): u64
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_bits_create_all_ones">create_all_ones</a>(bitsLength: u8): u64
 </code></pre>
 
 
@@ -167,8 +167,8 @@ The function checks that the requested bit length doesn't exceed 64 (the size of
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr_bits.md#mmr_mmr_bits_create_all_ones">create_all_ones</a>(bitsLength: u8): u64 {
-    <b>assert</b>!(bitsLength &lt;= 64, <a href="../mmr/mmr_bits.md#mmr_mmr_bits_Eu64Length">Eu64Length</a>);
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_bits_create_all_ones">create_all_ones</a>(bitsLength: u8): u64 {
+    <b>assert</b>!(bitsLength &lt;= 64, <a href="#mmr_mmr_bits_Eu64Length">Eu64Length</a>);
     // Calculate 2^bitsLength - 1, which <b>has</b> 'bitsLength' 1s
     (1 &lt;&lt; bitsLength) - 1
 }

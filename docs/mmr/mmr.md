@@ -61,7 +61,7 @@ elements without needing to store the entire dataset.
 Event emitted when a public MMR is created.
 
 
-<pre><code><b>public</b> <b>struct</b> <a href="../mmr/mmr.md#mmr_mmr_MMRShared">MMRShared</a> <b>has</b> <b>copy</b>, drop
+<pre><code><b>public</b> <b>struct</b> <a href="#mmr_mmr_MMRShared">MMRShared</a> <b>has</b> <b>copy</b>, drop
 </code></pre>
 
 
@@ -93,7 +93,7 @@ Event emitted when a public MMR is created.
 Event emitted when the MMR root is updated.
 
 
-<pre><code><b>public</b> <b>struct</b> <a href="../mmr/mmr.md#mmr_mmr_MMRUpdated">MMRUpdated</a> <b>has</b> <b>copy</b>, drop
+<pre><code><b>public</b> <b>struct</b> <a href="#mmr_mmr_MMRUpdated">MMRUpdated</a> <b>has</b> <b>copy</b>, drop
 </code></pre>
 
 
@@ -138,7 +138,7 @@ The proof includes:
 - The size of the MMR when the proof was generated.
 
 
-<pre><code><b>public</b> <b>struct</b> <a href="../mmr/mmr.md#mmr_mmr_Proof">Proof</a> <b>has</b> <b>copy</b>, drop, store
+<pre><code><b>public</b> <b>struct</b> <a href="#mmr_mmr_Proof">Proof</a> <b>has</b> <b>copy</b>, drop, store
 </code></pre>
 
 
@@ -195,7 +195,7 @@ This object maintains:
 - All nodes in the MMR.
 
 
-<pre><code><b>public</b> <b>struct</b> <a href="../mmr/mmr.md#mmr_mmr_MMR">MMR</a> <b>has</b> key, store
+<pre><code><b>public</b> <b>struct</b> <a href="#mmr_mmr_MMR">MMR</a> <b>has</b> key, store
 </code></pre>
 
 
@@ -241,7 +241,7 @@ Attempting to access node 0.
 
 
 <pre><code>#[error]
-<b>const</b> <a href="../mmr/mmr.md#mmr_mmr_EStartsAtOne">EStartsAtOne</a>: vector&lt;u8&gt; = b"First position of a <a href="../mmr/mmr.md#mmr_mmr_MMR">MMR</a> node is 1";
+<b>const</b> <a href="#mmr_mmr_EStartsAtOne">EStartsAtOne</a>: vector&lt;u8&gt; = b"First position of a <a href="#mmr_mmr_MMR">MMR</a> node is 1";
 </code></pre>
 
 
@@ -252,7 +252,7 @@ Attempting to generate a proof for a non-leaf node.
 
 
 <pre><code>#[error]
-<b>const</b> <a href="../mmr/mmr.md#mmr_mmr_EProofOnlyLeaf">EProofOnlyLeaf</a>: vector&lt;u8&gt; = b"Proofs can only be generated <b>for</b> lead nodes";
+<b>const</b> <a href="#mmr_mmr_EProofOnlyLeaf">EProofOnlyLeaf</a>: vector&lt;u8&gt; = b"Proofs can only be generated <b>for</b> lead nodes";
 </code></pre>
 
 
@@ -263,7 +263,7 @@ Attempting to access a node bigger than MMR size.
 
 
 <pre><code>#[error]
-<b>const</b> <a href="../mmr/mmr.md#mmr_mmr_ENonExistingNode">ENonExistingNode</a>: vector&lt;u8&gt; = b"Node does not exists";
+<b>const</b> <a href="#mmr_mmr_ENonExistingNode">ENonExistingNode</a>: vector&lt;u8&gt; = b"Node does not exists";
 </code></pre>
 
 
@@ -275,7 +275,7 @@ Attempting to access a node bigger than MMR size.
 Return the position of the element in the MMR that this proof is for.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_get_position">get_position</a>(proof: &<a href="../mmr/mmr.md#mmr_mmr_Proof">mmr::mmr::Proof</a>): u64
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_get_position">get_position</a>(proof: &<a href="#mmr_mmr_Proof">mmr::mmr::Proof</a>): u64
 </code></pre>
 
 
@@ -284,7 +284,7 @@ Return the position of the element in the MMR that this proof is for.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_get_position">get_position</a>(proof: &<a href="../mmr/mmr.md#mmr_mmr_Proof">Proof</a>): u64 {
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_get_position">get_position</a>(proof: &<a href="#mmr_mmr_Proof">Proof</a>): u64 {
     proof.position
 }
 </code></pre>
@@ -300,7 +300,7 @@ Return the position of the element in the MMR that this proof is for.
 Return the root hash of the MMR at the time this proof was generated.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_get_mmr_root">get_mmr_root</a>(proof: &<a href="../mmr/mmr.md#mmr_mmr_Proof">mmr::mmr::Proof</a>): vector&lt;u8&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_get_mmr_root">get_mmr_root</a>(proof: &<a href="#mmr_mmr_Proof">mmr::mmr::Proof</a>): vector&lt;u8&gt;
 </code></pre>
 
 
@@ -309,7 +309,7 @@ Return the root hash of the MMR at the time this proof was generated.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_get_mmr_root">get_mmr_root</a>(proof: &<a href="../mmr/mmr.md#mmr_mmr_Proof">Proof</a>): vector&lt;u8&gt; {
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_get_mmr_root">get_mmr_root</a>(proof: &<a href="#mmr_mmr_Proof">Proof</a>): vector&lt;u8&gt; {
     proof.mmr_root
 }
 </code></pre>
@@ -325,7 +325,7 @@ Return the root hash of the MMR at the time this proof was generated.
 Return the size of the MMR at the time this proof was generated.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_get_mmr_size">get_mmr_size</a>(proof: &<a href="../mmr/mmr.md#mmr_mmr_Proof">mmr::mmr::Proof</a>): u64
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_get_mmr_size">get_mmr_size</a>(proof: &<a href="#mmr_mmr_Proof">mmr::mmr::Proof</a>): u64
 </code></pre>
 
 
@@ -334,7 +334,7 @@ Return the size of the MMR at the time this proof was generated.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_get_mmr_size">get_mmr_size</a>(proof: &<a href="../mmr/mmr.md#mmr_mmr_Proof">Proof</a>): u64 {
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_get_mmr_size">get_mmr_size</a>(proof: &<a href="#mmr_mmr_Proof">Proof</a>): u64 {
     proof.mmr_size
 }
 </code></pre>
@@ -350,7 +350,7 @@ Return the size of the MMR at the time this proof was generated.
 Verify that some data exists in the MMR the proof belongs to.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_verify">verify</a>(proof: &<a href="../mmr/mmr.md#mmr_mmr_Proof">mmr::mmr::Proof</a>, data: vector&lt;u8&gt;): bool
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_verify">verify</a>(proof: &<a href="#mmr_mmr_Proof">mmr::mmr::Proof</a>, data: vector&lt;u8&gt;): bool
 </code></pre>
 
 
@@ -359,9 +359,9 @@ Verify that some data exists in the MMR the proof belongs to.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_verify">verify</a>(proof: &<a href="../mmr/mmr.md#mmr_mmr_Proof">Proof</a>, data: vector&lt;u8&gt;): bool {
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_verify">verify</a>(proof: &<a href="#mmr_mmr_Proof">Proof</a>, data: vector&lt;u8&gt;): bool {
     // For verifying the data we need to calculate the hash <b>for</b> the proof position tree's peak
-    // and combine it with the rest of peak hashes and <a href="../mmr/mmr.md#mmr_mmr_MMR">MMR</a> size to calculate the root hash
+    // and combine it with the rest of peak hashes and <a href="#mmr_mmr_MMR">MMR</a> size to calculate the root hash
     <b>let</b> <b>mut</b> peaks_hashes= vector::empty&lt;vector&lt;u8&gt;&gt;();
     <b>let</b> calculated_root_hash: vector&lt;u8&gt;;
     // Calculate the path to follow <b>for</b> verification
@@ -392,8 +392,8 @@ Verify that some data exists in the MMR the proof belongs to.
     peaks_hashes.append(proof.left_peaks_hashes);
     peaks_hashes.push_back(node_hash);
     peaks_hashes.append(proof.right_peaks_hashes);
-    // Combine all peak hashes with the <a href="../mmr/mmr.md#mmr_mmr_MMR">MMR</a> size to calculate the root
-    calculated_root_hash = <a href="../mmr/mmr_utils.md#mmr_mmr_utils_hash_with_integer">mmr_utils::hash_with_integer</a>(proof.<a href="../mmr/mmr.md#mmr_mmr_get_mmr_size">get_mmr_size</a>(), peaks_hashes);
+    // Combine all peak hashes with the <a href="#mmr_mmr_MMR">MMR</a> size to calculate the root
+    calculated_root_hash = <a href="../mmr/mmr_utils.md#mmr_mmr_utils_hash_with_integer">mmr_utils::hash_with_integer</a>(proof.<a href="#mmr_mmr_get_mmr_size">get_mmr_size</a>(), peaks_hashes);
     // Check <b>if</b> it matches the root stored on the proof
     calculated_root_hash == proof.mmr_root
 }
@@ -410,7 +410,7 @@ Verify that some data exists in the MMR the proof belongs to.
 Initialize a new MMR object.
 
 
-<pre><code><b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_new">new</a>(ctx: &<b>mut</b> <a href="../dependencies/sui/tx_context.md#sui_tx_context_TxContext">sui::tx_context::TxContext</a>): <a href="../mmr/mmr.md#mmr_mmr_MMR">mmr::mmr::MMR</a>
+<pre><code><b>fun</b> <a href="#mmr_mmr_new">new</a>(ctx: &<b>mut</b> <a href="../dependencies/sui/tx_context.md#sui_tx_context_TxContext">sui::tx_context::TxContext</a>): <a href="#mmr_mmr_MMR">mmr::mmr::MMR</a>
 </code></pre>
 
 
@@ -419,8 +419,8 @@ Initialize a new MMR object.
 <summary>Implementation</summary>
 
 
-<pre><code><b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_new">new</a>(ctx: &<b>mut</b> TxContext): <a href="../mmr/mmr.md#mmr_mmr_MMR">MMR</a> {
-    <a href="../mmr/mmr.md#mmr_mmr_MMR">MMR</a> {
+<pre><code><b>fun</b> <a href="#mmr_mmr_new">new</a>(ctx: &<b>mut</b> TxContext): <a href="#mmr_mmr_MMR">MMR</a> {
+    <a href="#mmr_mmr_MMR">MMR</a> {
         id: object::new(ctx),
         root: hash::blake2b256((0 <b>as</b> u64).to_string().as_bytes()),
         peaks_hashes: vector::empty&lt;vector&lt;u8&gt;&gt;(),
@@ -440,7 +440,7 @@ Initialize a new MMR object.
 Create a new private MMR object and transfer it to the caller address.
 
 
-<pre><code><b>public</b> <b>entry</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_create_mmr">create_mmr</a>(ctx: &<b>mut</b> <a href="../dependencies/sui/tx_context.md#sui_tx_context_TxContext">sui::tx_context::TxContext</a>)
+<pre><code><b>public</b> <b>entry</b> <b>fun</b> <a href="#mmr_mmr_create_mmr">create_mmr</a>(ctx: &<b>mut</b> <a href="../dependencies/sui/tx_context.md#sui_tx_context_TxContext">sui::tx_context::TxContext</a>)
 </code></pre>
 
 
@@ -449,8 +449,8 @@ Create a new private MMR object and transfer it to the caller address.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>entry</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_create_mmr">create_mmr</a>(ctx: &<b>mut</b> TxContext) {
-    transfer::transfer(<a href="../mmr/mmr.md#mmr_mmr_new">new</a>(ctx), ctx.sender());
+<pre><code><b>public</b> <b>entry</b> <b>fun</b> <a href="#mmr_mmr_create_mmr">create_mmr</a>(ctx: &<b>mut</b> TxContext) {
+    transfer::transfer(<a href="#mmr_mmr_new">new</a>(ctx), ctx.sender());
 }
 </code></pre>
 
@@ -467,7 +467,7 @@ EXPERIMENTAL: Literally anyone on chain could write to this MMR, so what would b
 TO-DO: Explore a capability based version of the MMR that allows to share it while restricting who could write to it.
 
 
-<pre><code><b>public</b> <b>entry</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_create_public_mmr">create_public_mmr</a>(ctx: &<b>mut</b> <a href="../dependencies/sui/tx_context.md#sui_tx_context_TxContext">sui::tx_context::TxContext</a>)
+<pre><code><b>public</b> <b>entry</b> <b>fun</b> <a href="#mmr_mmr_create_public_mmr">create_public_mmr</a>(ctx: &<b>mut</b> <a href="../dependencies/sui/tx_context.md#sui_tx_context_TxContext">sui::tx_context::TxContext</a>)
 </code></pre>
 
 
@@ -476,11 +476,11 @@ TO-DO: Explore a capability based version of the MMR that allows to share it whi
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>entry</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_create_public_mmr">create_public_mmr</a>(ctx: &<b>mut</b> TxContext) {
-    <b>let</b> <a href="../mmr/mmr.md#mmr_mmr">mmr</a> = <a href="../mmr/mmr.md#mmr_mmr_new">new</a>(ctx);
-    <b>let</b> id = object::id(&<a href="../mmr/mmr.md#mmr_mmr">mmr</a>);
-    transfer::share_object(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>);
-    event::emit(<a href="../mmr/mmr.md#mmr_mmr_MMRShared">MMRShared</a> {
+<pre><code><b>public</b> <b>entry</b> <b>fun</b> <a href="#mmr_mmr_create_public_mmr">create_public_mmr</a>(ctx: &<b>mut</b> TxContext) {
+    <b>let</b> <a href="#mmr_mmr">mmr</a> = <a href="#mmr_mmr_new">new</a>(ctx);
+    <b>let</b> id = object::id(&<a href="#mmr_mmr">mmr</a>);
+    transfer::share_object(<a href="#mmr_mmr">mmr</a>);
+    event::emit(<a href="#mmr_mmr_MMRShared">MMRShared</a> {
         creator: ctx.sender(),
         id: id
     });
@@ -498,7 +498,7 @@ TO-DO: Explore a capability based version of the MMR that allows to share it whi
 Get the current root commitment of the MMR.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_get_root">get_root</a>(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>: &<a href="../mmr/mmr.md#mmr_mmr_MMR">mmr::mmr::MMR</a>): vector&lt;u8&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_get_root">get_root</a>(<a href="#mmr_mmr">mmr</a>: &<a href="#mmr_mmr_MMR">mmr::mmr::MMR</a>): vector&lt;u8&gt;
 </code></pre>
 
 
@@ -507,8 +507,8 @@ Get the current root commitment of the MMR.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_get_root">get_root</a>(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>: &<a href="../mmr/mmr.md#mmr_mmr_MMR">MMR</a>): vector&lt;u8&gt; {
-    <a href="../mmr/mmr.md#mmr_mmr">mmr</a>.root
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_get_root">get_root</a>(<a href="#mmr_mmr">mmr</a>: &<a href="#mmr_mmr_MMR">MMR</a>): vector&lt;u8&gt; {
+    <a href="#mmr_mmr">mmr</a>.root
 }
 </code></pre>
 
@@ -523,7 +523,7 @@ Get the current root commitment of the MMR.
 Get the current peaks of the MMR.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_get_peaks">get_peaks</a>(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>: &<a href="../mmr/mmr.md#mmr_mmr_MMR">mmr::mmr::MMR</a>): vector&lt;vector&lt;u8&gt;&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_get_peaks">get_peaks</a>(<a href="#mmr_mmr">mmr</a>: &<a href="#mmr_mmr_MMR">mmr::mmr::MMR</a>): vector&lt;vector&lt;u8&gt;&gt;
 </code></pre>
 
 
@@ -532,8 +532,8 @@ Get the current peaks of the MMR.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_get_peaks">get_peaks</a>(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>: &<a href="../mmr/mmr.md#mmr_mmr_MMR">MMR</a>): vector&lt;vector&lt;u8&gt;&gt; {
-    <a href="../mmr/mmr.md#mmr_mmr">mmr</a>.peaks_hashes
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_get_peaks">get_peaks</a>(<a href="#mmr_mmr">mmr</a>: &<a href="#mmr_mmr_MMR">MMR</a>): vector&lt;vector&lt;u8&gt;&gt; {
+    <a href="#mmr_mmr">mmr</a>.peaks_hashes
 }
 </code></pre>
 
@@ -548,7 +548,7 @@ Get the current peaks of the MMR.
 Get all nodes in the MMR.
 
 
-<pre><code><b>public</b>(package) <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_get_nodes">get_nodes</a>(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>: &<a href="../mmr/mmr.md#mmr_mmr_MMR">mmr::mmr::MMR</a>): vector&lt;vector&lt;u8&gt;&gt;
+<pre><code><b>public</b>(package) <b>fun</b> <a href="#mmr_mmr_get_nodes">get_nodes</a>(<a href="#mmr_mmr">mmr</a>: &<a href="#mmr_mmr_MMR">mmr::mmr::MMR</a>): vector&lt;vector&lt;u8&gt;&gt;
 </code></pre>
 
 
@@ -557,8 +557,8 @@ Get all nodes in the MMR.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b>(package) <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_get_nodes">get_nodes</a>(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>: &<a href="../mmr/mmr.md#mmr_mmr_MMR">MMR</a>): vector&lt;vector&lt;u8&gt;&gt; {
-    <a href="../mmr/mmr.md#mmr_mmr">mmr</a>.nodes_hashes
+<pre><code><b>public</b>(package) <b>fun</b> <a href="#mmr_mmr_get_nodes">get_nodes</a>(<a href="#mmr_mmr">mmr</a>: &<a href="#mmr_mmr_MMR">MMR</a>): vector&lt;vector&lt;u8&gt;&gt; {
+    <a href="#mmr_mmr">mmr</a>.nodes_hashes
 }
 </code></pre>
 
@@ -573,7 +573,7 @@ Get all nodes in the MMR.
 Get the amount of nodes in the MMR.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_get_size">get_size</a>(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>: &<a href="../mmr/mmr.md#mmr_mmr_MMR">mmr::mmr::MMR</a>): u64
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_get_size">get_size</a>(<a href="#mmr_mmr">mmr</a>: &<a href="#mmr_mmr_MMR">mmr::mmr::MMR</a>): u64
 </code></pre>
 
 
@@ -582,8 +582,8 @@ Get the amount of nodes in the MMR.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_get_size">get_size</a>(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>: &<a href="../mmr/mmr.md#mmr_mmr_MMR">MMR</a>): u64 {
-    <a href="../mmr/mmr.md#mmr_mmr">mmr</a>.nodes_hashes.length()
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_get_size">get_size</a>(<a href="#mmr_mmr">mmr</a>: &<a href="#mmr_mmr_MMR">MMR</a>): u64 {
+    <a href="#mmr_mmr">mmr</a>.nodes_hashes.length()
 }
 </code></pre>
 
@@ -598,7 +598,7 @@ Get the amount of nodes in the MMR.
 Append multiple leaf elements to the MMR.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_append_leaves">append_leaves</a>(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>: &<b>mut</b> <a href="../mmr/mmr.md#mmr_mmr_MMR">mmr::mmr::MMR</a>, leaves_data: vector&lt;vector&lt;u8&gt;&gt;)
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_append_leaves">append_leaves</a>(<a href="#mmr_mmr">mmr</a>: &<b>mut</b> <a href="#mmr_mmr_MMR">mmr::mmr::MMR</a>, leaves_data: vector&lt;vector&lt;u8&gt;&gt;)
 </code></pre>
 
 
@@ -607,19 +607,19 @@ Append multiple leaf elements to the MMR.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_append_leaves">append_leaves</a>(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>: &<b>mut</b> <a href="../mmr/mmr.md#mmr_mmr_MMR">MMR</a>, leaves_data: vector&lt;vector&lt;u8&gt;&gt;) {
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_append_leaves">append_leaves</a>(<a href="#mmr_mmr">mmr</a>: &<b>mut</b> <a href="#mmr_mmr_MMR">MMR</a>, leaves_data: vector&lt;vector&lt;u8&gt;&gt;) {
     <b>if</b> (leaves_data.length() == 0) {
         <b>return</b>
     };
     <b>let</b> <b>mut</b> i = 0;
     <b>while</b> (i &lt; leaves_data.length()) {
-        <a href="../mmr/mmr.md#mmr_mmr_append_leaf">append_leaf</a>(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>, leaves_data[i]);
+        <a href="#mmr_mmr_append_leaf">append_leaf</a>(<a href="#mmr_mmr">mmr</a>, leaves_data[i]);
         i = i + 1;
     };
-    event::emit(<a href="../mmr/mmr.md#mmr_mmr_MMRUpdated">MMRUpdated</a> {
-        root: <a href="../mmr/mmr.md#mmr_mmr">mmr</a>.root,
-        peaks: <a href="../mmr/mmr.md#mmr_mmr">mmr</a>.peaks_hashes,
-        new_size: <a href="../mmr/mmr.md#mmr_mmr">mmr</a>.<a href="../mmr/mmr.md#mmr_mmr_get_size">get_size</a>()
+    event::emit(<a href="#mmr_mmr_MMRUpdated">MMRUpdated</a> {
+        root: <a href="#mmr_mmr">mmr</a>.root,
+        peaks: <a href="#mmr_mmr">mmr</a>.peaks_hashes,
+        new_size: <a href="#mmr_mmr">mmr</a>.<a href="#mmr_mmr_get_size">get_size</a>()
     })
 }
 </code></pre>
@@ -636,7 +636,7 @@ Append a single leaf element to the MMR.
 This is the core append logic that handles the creation of new nodes and merging of peaks as needed.
 
 
-<pre><code><b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_append_leaf">append_leaf</a>(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>: &<b>mut</b> <a href="../mmr/mmr.md#mmr_mmr_MMR">mmr::mmr::MMR</a>, leaf_data: vector&lt;u8&gt;)
+<pre><code><b>fun</b> <a href="#mmr_mmr_append_leaf">append_leaf</a>(<a href="#mmr_mmr">mmr</a>: &<b>mut</b> <a href="#mmr_mmr_MMR">mmr::mmr::MMR</a>, leaf_data: vector&lt;u8&gt;)
 </code></pre>
 
 
@@ -645,35 +645,35 @@ This is the core append logic that handles the creation of new nodes and merging
 <summary>Implementation</summary>
 
 
-<pre><code><b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_append_leaf">append_leaf</a>(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>: &<b>mut</b> <a href="../mmr/mmr.md#mmr_mmr_MMR">MMR</a>, leaf_data: vector&lt;u8&gt;) {
-    // Calculate which <a href="../mmr/mmr.md#mmr_mmr_new">new</a> nodes and peaks will be created by appending a <a href="../mmr/mmr.md#mmr_mmr_new">new</a> leaf
+<pre><code><b>fun</b> <a href="#mmr_mmr_append_leaf">append_leaf</a>(<a href="#mmr_mmr">mmr</a>: &<b>mut</b> <a href="#mmr_mmr_MMR">MMR</a>, leaf_data: vector&lt;u8&gt;) {
+    // Calculate which <a href="#mmr_mmr_new">new</a> nodes and peaks will be created by appending a <a href="#mmr_mmr_new">new</a> leaf
     <b>let</b> <b>mut</b> child_hashes: vector&lt;vector&lt;u8&gt;&gt;;
     <b>let</b> peaks_positions: vector&lt;u64&gt;;
-    // The <a href="../mmr/mmr.md#mmr_mmr_new">new</a> leaf will take the next node position
-    <b>let</b> <b>mut</b> node_position = <a href="../mmr/mmr.md#mmr_mmr">mmr</a>.<a href="../mmr/mmr.md#mmr_mmr_get_size">get_size</a>() + 1;
-    // Hash the leaf data with the position and store it on the list of <a href="../mmr/mmr.md#mmr_mmr_new">new</a> nodes
+    // The <a href="#mmr_mmr_new">new</a> leaf will take the next node position
+    <b>let</b> <b>mut</b> node_position = <a href="#mmr_mmr">mmr</a>.<a href="#mmr_mmr_get_size">get_size</a>() + 1;
+    // Hash the leaf data with the position and store it on the list of <a href="#mmr_mmr_new">new</a> nodes
     <b>let</b> <b>mut</b> node_hash = <a href="../mmr/mmr_utils.md#mmr_mmr_utils_hash_with_integer">mmr_utils::hash_with_integer</a>(node_position, vector::singleton(leaf_data));
     <b>let</b> <b>mut</b> new_nodes_hashes = vector::singleton(node_hash);
-    // If it is a right sibling, it will generate a <a href="../mmr/mmr.md#mmr_mmr_new">new</a> parent node. As long <b>as</b> the newly
-    // generated parent nodes remain right siblings, they will <b>continue</b> generating <a href="../mmr/mmr.md#mmr_mmr_new">new</a> parents
+    // If it is a right sibling, it will generate a <a href="#mmr_mmr_new">new</a> parent node. As long <b>as</b> the newly
+    // generated parent nodes remain right siblings, they will <b>continue</b> generating <a href="#mmr_mmr_new">new</a> parents
     <b>while</b> (<a href="../mmr/mmr_utils.md#mmr_mmr_utils_is_right_sibling">mmr_utils::is_right_sibling</a>(node_position)) {
         // Get the left sibling hash using the node position and combine it with the node hash
-        child_hashes = vector::singleton(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>.nodes_hashes[<a href="../mmr/mmr_utils.md#mmr_mmr_utils_get_sibling_position">mmr_utils::get_sibling_position</a>((node_position)) - 1]);
+        child_hashes = vector::singleton(<a href="#mmr_mmr">mmr</a>.nodes_hashes[<a href="../mmr/mmr_utils.md#mmr_mmr_utils_get_sibling_position">mmr_utils::get_sibling_position</a>((node_position)) - 1]);
         child_hashes.push_back(node_hash);
         // Hash the siblings with the position the parent will take to create the parent node
         node_position = node_position + 1;
         node_hash = <a href="../mmr/mmr_utils.md#mmr_mmr_utils_hash_with_integer">mmr_utils::hash_with_integer</a>(node_position, child_hashes);
-        // And finally add it to the list of <a href="../mmr/mmr.md#mmr_mmr_new">new</a> nodes generated by the leaf appending
+        // And finally add it to the list of <a href="#mmr_mmr_new">new</a> nodes generated by the leaf appending
         new_nodes_hashes.push_back(node_hash);
     };
-    // Save the <a href="../mmr/mmr.md#mmr_mmr_new">new</a> nodeHashes to the <a href="../mmr/mmr.md#mmr_mmr_MMR">MMR</a> state
-    <a href="../mmr/mmr.md#mmr_mmr">mmr</a>.nodes_hashes.append(new_nodes_hashes);
-    // Get the <a href="../mmr/mmr.md#mmr_mmr_new">new</a> peak positions
-    peaks_positions = <a href="../mmr/mmr_utils.md#mmr_mmr_utils_get_peaks_positions">mmr_utils::get_peaks_positions</a>(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>.<a href="../mmr/mmr.md#mmr_mmr_get_size">get_size</a>());
-    // Update the peak hashes on the <a href="../mmr/mmr.md#mmr_mmr_MMR">MMR</a> state
-    <a href="../mmr/mmr.md#mmr_mmr">mmr</a>.peaks_hashes = <a href="../mmr/mmr_utils.md#mmr_mmr_utils_get_hashes_from_positions">mmr_utils::get_hashes_from_positions</a>(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>.nodes_hashes, peaks_positions);
-    // Finally update the <a href="../mmr/mmr.md#mmr_mmr_MMR">MMR</a> root bagging all the <a href="../mmr/mmr.md#mmr_mmr_new">new</a> peaks along the <a href="../mmr/mmr.md#mmr_mmr_new">new</a> <a href="../mmr/mmr.md#mmr_mmr_MMR">MMR</a> size
-    <a href="../mmr/mmr.md#mmr_mmr">mmr</a>.root = <a href="../mmr/mmr_utils.md#mmr_mmr_utils_hash_with_integer">mmr_utils::hash_with_integer</a>(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>.<a href="../mmr/mmr.md#mmr_mmr_get_size">get_size</a>(), <a href="../mmr/mmr.md#mmr_mmr">mmr</a>.peaks_hashes);
+    // Save the <a href="#mmr_mmr_new">new</a> nodeHashes to the <a href="#mmr_mmr_MMR">MMR</a> state
+    <a href="#mmr_mmr">mmr</a>.nodes_hashes.append(new_nodes_hashes);
+    // Get the <a href="#mmr_mmr_new">new</a> peak positions
+    peaks_positions = <a href="../mmr/mmr_utils.md#mmr_mmr_utils_get_peaks_positions">mmr_utils::get_peaks_positions</a>(<a href="#mmr_mmr">mmr</a>.<a href="#mmr_mmr_get_size">get_size</a>());
+    // Update the peak hashes on the <a href="#mmr_mmr_MMR">MMR</a> state
+    <a href="#mmr_mmr">mmr</a>.peaks_hashes = <a href="../mmr/mmr_utils.md#mmr_mmr_utils_get_hashes_from_positions">mmr_utils::get_hashes_from_positions</a>(<a href="#mmr_mmr">mmr</a>.nodes_hashes, peaks_positions);
+    // Finally update the <a href="#mmr_mmr_MMR">MMR</a> root bagging all the <a href="#mmr_mmr_new">new</a> peaks along the <a href="#mmr_mmr_new">new</a> <a href="#mmr_mmr_MMR">MMR</a> size
+    <a href="#mmr_mmr">mmr</a>.root = <a href="../mmr/mmr_utils.md#mmr_mmr_utils_hash_with_integer">mmr_utils::hash_with_integer</a>(<a href="#mmr_mmr">mmr</a>.<a href="#mmr_mmr_get_size">get_size</a>(), <a href="#mmr_mmr">mmr</a>.peaks_hashes);
 }
 </code></pre>
 
@@ -688,7 +688,7 @@ This is the core append logic that handles the creation of new nodes and merging
 Generate a proof for the element at the specified position.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_generate_proof">generate_proof</a>(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>: &<a href="../mmr/mmr.md#mmr_mmr_MMR">mmr::mmr::MMR</a>, position: u64): <a href="../mmr/mmr.md#mmr_mmr_Proof">mmr::mmr::Proof</a>
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_generate_proof">generate_proof</a>(<a href="#mmr_mmr">mmr</a>: &<a href="#mmr_mmr_MMR">mmr::mmr::MMR</a>, position: u64): <a href="#mmr_mmr_Proof">mmr::mmr::Proof</a>
 </code></pre>
 
 
@@ -697,21 +697,21 @@ Generate a proof for the element at the specified position.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="../mmr/mmr.md#mmr_mmr_generate_proof">generate_proof</a>(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>: &<a href="../mmr/mmr.md#mmr_mmr_MMR">MMR</a>, position: u64): <a href="../mmr/mmr.md#mmr_mmr_Proof">Proof</a> {
+<pre><code><b>public</b> <b>fun</b> <a href="#mmr_mmr_generate_proof">generate_proof</a>(<a href="#mmr_mmr">mmr</a>: &<a href="#mmr_mmr_MMR">MMR</a>, position: u64): <a href="#mmr_mmr_Proof">Proof</a> {
     // Check that the position that wants to get proved is correct
-    <b>assert</b>!(position &gt; 0, <a href="../mmr/mmr.md#mmr_mmr_EStartsAtOne">EStartsAtOne</a>);
-    <b>assert</b>!(<a href="../mmr/mmr_utils.md#mmr_mmr_utils_get_height">mmr_utils::get_height</a>(position) == 1, <a href="../mmr/mmr.md#mmr_mmr_EProofOnlyLeaf">EProofOnlyLeaf</a>);
-    <b>let</b> size = <a href="../mmr/mmr.md#mmr_mmr">mmr</a>.<a href="../mmr/mmr.md#mmr_mmr_get_size">get_size</a>();
-    <b>assert</b>!(position &lt;= size, <a href="../mmr/mmr.md#mmr_mmr_ENonExistingNode">ENonExistingNode</a>);
+    <b>assert</b>!(position &gt; 0, <a href="#mmr_mmr_EStartsAtOne">EStartsAtOne</a>);
+    <b>assert</b>!(<a href="../mmr/mmr_utils.md#mmr_mmr_utils_get_height">mmr_utils::get_height</a>(position) == 1, <a href="#mmr_mmr_EProofOnlyLeaf">EProofOnlyLeaf</a>);
+    <b>let</b> size = <a href="#mmr_mmr">mmr</a>.<a href="#mmr_mmr_get_size">get_size</a>();
+    <b>assert</b>!(position &lt;= size, <a href="#mmr_mmr_ENonExistingNode">ENonExistingNode</a>);
     // Calculate the positions of all nodes needed <b>for</b> the proof
     <b>let</b> proof_positions = <a href="../mmr/mmr_utils.md#mmr_mmr_utils_calc_proof_positions">mmr_utils::calc_proof_positions</a>(position, size);
     // Create proof from the calculated positions and their corresponding hashes
-    <a href="../mmr/mmr.md#mmr_mmr_Proof">Proof</a> {
+    <a href="#mmr_mmr_Proof">Proof</a> {
         position: position,
-        local_tree_path_hashes: proof_positions.get_local_tree_path_hashes(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>.nodes_hashes),
-        left_peaks_hashes: proof_positions.get_left_peaks_hashes(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>.nodes_hashes),
-        right_peaks_hashes: proof_positions.get_right_peaks_hashes(<a href="../mmr/mmr.md#mmr_mmr">mmr</a>.nodes_hashes),
-        mmr_root: <a href="../mmr/mmr.md#mmr_mmr">mmr</a>.root,
+        local_tree_path_hashes: proof_positions.get_local_tree_path_hashes(<a href="#mmr_mmr">mmr</a>.nodes_hashes),
+        left_peaks_hashes: proof_positions.get_left_peaks_hashes(<a href="#mmr_mmr">mmr</a>.nodes_hashes),
+        right_peaks_hashes: proof_positions.get_right_peaks_hashes(<a href="#mmr_mmr">mmr</a>.nodes_hashes),
+        mmr_root: <a href="#mmr_mmr">mmr</a>.root,
         mmr_size: size
     }
 }
